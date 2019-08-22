@@ -9,27 +9,16 @@ Exchange Commission (the "SEC"). The database is freely available to the public 
 ### Part 1: Parse files
 https://datahub.io/dataset/edgar lists how to access data from Edgar. The goal of this exercise is to extract tables from 10Q filings using Python
 
-Given a company with CIK (company ID) XXX (omitting leading zeroes) and document accession number YYY (acc-no on search results), programmatically generate the url to get data (http://www.sec.gov/Archives/edgar/data/51143/000005114313000007/0000051143-
-13-000007-index.html for IBM for example). Parse the file to locate the link to the 10Q file (https://www.sec.gov/Archives/edgar/data/51143/000005114313000007/ibm13q3_10q.htm for the above example). Parse this file to extract “all” tables in this filing and save them as csv files.
+Given a company with CIK (company ID) XXX (omitting leading zeroes) and document accession number YYY (acc-no on search results), programmatically generate the url to get data (http://www.sec.gov/Archives/edgar/data/51143/000005114313000007/0000051143-13-000007-index.html for IBM for example). Parse the file to locate the link to the 10Q file (https://www.sec.gov/Archives/edgar/data/51143/000005114313000007/ibm13q3_10q.htm for the above example). Parse this file to extract “all” tables in this filing and save them as csv files.
 
 ### Part 2: Dockerize this pipeline
-Build a docker image that can automate this task for any CIK and document accession number which
-could be parameterized in a config file. We should be able to replace IBM’s CIK and document
-accession number with Google's to generate the url
-https://www.sec.gov/Archives/edgar/data/1288776/000128877615000046/0001288776-15-000046-
-index.htm
-and then parse this document to look for the 10Q filing
-https://www.sec.gov/Archives/edgar/data/1288776/000128877615000046/goog10-qq32015.htm and
-extract all tables from this filing. The program should log all activities, then zip the tables and upload the
-log file and the zip file to Amazon S3. Parameterize your cik, accession number and amazon keys so that
-anyone can put their cik, accession number and amazon keys and locations and reuse your code. (We
-will do a demo on working with Docker and Amazon S3 next week)
-Submission:
-Submit the github with the Docker file and source code so that we can rebuild the Docker images. Also
-register your Docker image on Dockerhub and provide links. Write a report detailing:
-• Your design and implementation for both the parts.
-• Review your outputs stored on Amazon S3 and discuss outputs. How do you handle exceptions
-when you don’t find the cik/accession number or if the amazon keys aren’t valid?
+Build a docker image that can automate this task for any CIK and document accession number which could be parameterized in a config file. 
+
+We should be able to replace IBM’s CIK and document accession number with Google's to generate the url
+https://www.sec.gov/Archives/edgar/data/1288776/000128877615000046/0001288776-15-000046-index.htm and then parse this document to look for the 10Q filing https://www.sec.gov/Archives/edgar/data/1288776/000128877615000046/goog10-qq32015.htm and extract all tables from this filing. 
+
+The program should log all activities, then zip the tables and upload the log file and the zip file to Amazon S3. Parameterize your cik, accession number and amazon keys so that anyone can put their cik, accession number and amazon keys and locations and reuse your code. 
+
 
 
 ## Problem 2: Missing Data Analysis
