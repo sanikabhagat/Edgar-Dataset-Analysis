@@ -46,6 +46,7 @@ Write a report detailing:
 • Your design and implementation for the Docker part.
 • Review your outputs stored onAmazonS3 and discuss results. How does it handle
 exceptions ?What if amazon keys are invalid?What if datawasn’t found?
-Reference:
+
+### Reference:
 1. https://www.sec.gov/edgar/searchedgar/accessing-edgar-data.htm
 2. https://www.sec.gov/data/edgar-log-file-data-set.html
