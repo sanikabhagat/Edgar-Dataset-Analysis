@@ -7,15 +7,10 @@ Exchange Commission (the "SEC"). The database is freely available to the public 
 ## Problem 1: Data wrangling Edgar data from text files
 
 ### Part 1: Parse files
-https://datahub.io/dataset/edgar lists how to access data from Edgar. The goal of this exercise is to
-extract tables from 10Q filings using Python
-Given a company with CIK (company ID) XXX (omitting leading zeroes) and document accession
-number YYY (acc-no on search results), programmatically generate the url to get data
-(http://www.sec.gov/Archives/edgar/data/51143/000005114313000007/0000051143-
-13-000007-index.html
-for IBM for example). Parse the file to locate the link to the 10Q file
-(https://www.sec.gov/Archives/edgar/data/51143/000005114313000007/ibm13q3_10q.htm for the
-above example). Parse this file to extract “all” tables in this filing and save them as csv files.
+https://datahub.io/dataset/edgar lists how to access data from Edgar. The goal of this exercise is to extract tables from 10Q filings using Python
+
+Given a company with CIK (company ID) XXX (omitting leading zeroes) and document accession number YYY (acc-no on search results), programmatically generate the url to get data (http://www.sec.gov/Archives/edgar/data/51143/000005114313000007/0000051143-
+13-000007-index.html for IBM for example). Parse the file to locate the link to the 10Q file (https://www.sec.gov/Archives/edgar/data/51143/000005114313000007/ibm13q3_10q.htm for the above example). Parse this file to extract “all” tables in this filing and save them as csv files.
 
 ### Part 2: Dockerize this pipeline
 Build a docker image that can automate this task for any CIK and document accession number which
