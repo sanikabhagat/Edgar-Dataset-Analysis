@@ -25,25 +25,19 @@ The program should log all activities, then zip the tables and upload the log fi
 You are asked to analyze the EDGAR Log File Data Set [https://www.sec.gov/data/edgar-log-filedata-set.html]. The page lists the meta data for the datasets and you are expected to develop a pipeline which does the following. 
 
 Given a year, your program (In Python) should get data for the first day of the month (programmatically generate the url http://www.sec.gov/dera/data/Public-EDGAR-log-file-data/2003/Qtr1/log20030101.zip for Jan 2003 for example) for every month in the year and process the file for the following:
-• Handle missing data
-• Compute summary metrics (Decide which ones)
-• Check for any observable anomalies
-• Your program should log all the operations (with time stamps) into a log file.
-• Compile all the data and summaries of the 12 files into one file
-• Upload this compiled data file and the log file you generated to your Amazon S3 bucket (Google
-on Python packages to use for this.
+- Handle missing data
+- Compute summary metrics (Decide which ones)
+- Check for any observable anomalies
+- Your program should log all the operations (with time stamps) into a log file
+- Compile all the data and summaries of the 12 files into one file
+- Upload this compiled data file and the log file you generated to your Amazon S3 bucket 
+
 The code should work for any year on the page. You should create a Docker image which runs the
 pipeline. Note: Don’t put sensitive information like amazon keys in your Docker files. Parameterize it
 so that anyone can put their specific keys and locations and reuse your code.
 Try your Docker image on AWS and run it for 2010 and share the locations for the AWS bucket with
 the processed data and log file in your report
-Submission:
-Submit the github with the Docker file and source code so that we can rebuild the Docker images. Also
-register your Docker image on Dockerhub and provide links.
-Write a report detailing:
-• Your design and implementation for the Docker part.
-• Review your outputs stored onAmazonS3 and discuss results. How does it handle
-exceptions ?What if amazon keys are invalid?What if datawasn’t found?
+
 
 ### Reference:
 1. https://www.sec.gov/edgar/searchedgar/accessing-edgar-data.htm
