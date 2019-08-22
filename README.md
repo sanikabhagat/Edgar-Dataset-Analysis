@@ -32,11 +32,9 @@ Given a year, your program (In Python) should get data for the first day of the 
 - Compile all the data and summaries of the 12 files into one file
 - Upload this compiled data file and the log file you generated to your Amazon S3 bucket 
 
-The code should work for any year on the page. You should create a Docker image which runs the
-pipeline. Note: Don’t put sensitive information like amazon keys in your Docker files. Parameterize it
-so that anyone can put their specific keys and locations and reuse your code.
-Try your Docker image on AWS and run it for 2010 and share the locations for the AWS bucket with
-the processed data and log file in your report
+The code should work for any year on the page. You should create a Docker image which runs the pipeline. 
+
+##### Note: Don’t put sensitive information like amazon keys in your Docker files. Parameterize it so that anyone can put their specific keys and locations and reuse your code.
 
 
 ### Reference:
