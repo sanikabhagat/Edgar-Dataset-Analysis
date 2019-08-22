@@ -1,19 +1,12 @@
 # Edgar-Dataset-Analysis
 
-Working with Edgar datasets: Wrangling, Pre-processing and
-exploratory data analysis
-EDGAR, the Electronic Data Gathering, Analysis, and Retrieval system, performs
-automated collection, validation, indexing, acceptance, and forwarding of submissions by
-companies and others who are required by law to file forms with the U.S. Securities and
-Exchange Commission (the "SEC"). The database is freely available to the public via the
-Internet (Web or FTP).
-The goal of this assignment is to work with Edgar datasets
-• Deadline: October 12th midnight.
-• All submissions are to be done through github + QuSandbox
-• The repository shouldn’t be updated after October 12th 11.59pm or will incur penalty.
-• Send the github link to analyticsneu@gmail.com and the TA.
-Problem 1: Data wrangling Edgar data from text files (50 points)
-Part 1: Parse files
+EDGAR, the Electronic Data Gathering, Analysis, and Retrieval system, performs automated collection, validation, indexing, acceptance, and forwarding of submissions by companies and others who are required by law to file forms with the U.S. Securities and
+Exchange Commission (the "SEC"). The database is freely available to the public via the Internet (Web or FTP).
+
+
+## Problem 1: Data wrangling Edgar data from text files
+
+### Part 1: Parse files
 https://datahub.io/dataset/edgar lists how to access data from Edgar. The goal of this exercise is to
 extract tables from 10Q filings using Python
 Given a company with CIK (company ID) XXX (omitting leading zeroes) and document accession
@@ -23,7 +16,8 @@ number YYY (acc-no on search results), programmatically generate the url to get 
 for IBM for example). Parse the file to locate the link to the 10Q file
 (https://www.sec.gov/Archives/edgar/data/51143/000005114313000007/ibm13q3_10q.htm for the
 above example). Parse this file to extract “all” tables in this filing and save them as csv files.
-Part 2: Dockerize this pipeline
+
+### Part 2: Dockerize this pipeline
 Build a docker image that can automate this task for any CIK and document accession number which
 could be parameterized in a config file. We should be able to replace IBM’s CIK and document
 accession number with Google's to generate the url
@@ -41,8 +35,9 @@ register your Docker image on Dockerhub and provide links. Write a report detail
 • Your design and implementation for both the parts.
 • Review your outputs stored on Amazon S3 and discuss outputs. How do you handle exceptions
 when you don’t find the cik/accession number or if the amazon keys aren’t valid?
-Problem 2:
-Missing Data Analysis (50 points)
+
+
+## Problem 2: Missing Data Analysis
 You are asked to analyze the EDGAR Log File Data Set [https://www.sec.gov/data/edgar-log-filedata-set.html ]. The page lists the meta data for the datasets and you are expected to develop a
 pipeline which does the following. Given a year, your program (In Python) should get data for the
 first day of the month(programmatically generate the url
