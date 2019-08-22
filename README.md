@@ -22,11 +22,9 @@ The program should log all activities, then zip the tables and upload the log fi
 
 
 ## Problem 2: Missing Data Analysis
-You are asked to analyze the EDGAR Log File Data Set [https://www.sec.gov/data/edgar-log-filedata-set.html ]. The page lists the meta data for the datasets and you are expected to develop a
-pipeline which does the following. Given a year, your program (In Python) should get data for the
-first day of the month(programmatically generate the url
-• http://www.sec.gov/dera/data/Public-EDGAR-log-file-data/2003/Qtr1/log20030101.zip
-for Jan 2003 for example ) for every month in the year and process the file for the following:
+You are asked to analyze the EDGAR Log File Data Set [https://www.sec.gov/data/edgar-log-filedata-set.html]. The page lists the meta data for the datasets and you are expected to develop a pipeline which does the following. 
+
+Given a year, your program (In Python) should get data for the first day of the month (programmatically generate the url http://www.sec.gov/dera/data/Public-EDGAR-log-file-data/2003/Qtr1/log20030101.zip for Jan 2003 for example) for every month in the year and process the file for the following:
 • Handle missing data
 • Compute summary metrics (Decide which ones)
 • Check for any observable anomalies
